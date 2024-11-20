@@ -43,14 +43,15 @@ public class SparseArray {
             output.append("\n");
             System.out.println();
         }
+        // 6. 輸出至src/main/resources/output.txt
         Path filePath = Paths.get("src/main/resources/output.txt");
         Files.writeString(filePath, output.toString());
         System.out.println("------------------分隔線------------------");
 
-        // 6. 將稀疏矩陣轉回原始陣列
+        // 7. 將稀疏矩陣轉回原始陣列
         int[][] res = sparseArrayToArray(sparseArray);
 
-        // 7. 印出原始矩陣
+        // 8. 印出原始矩陣
         for (int[] row : res) {
             for (int item : row) {
                 System.out.printf("%d\t", item);
@@ -58,7 +59,7 @@ public class SparseArray {
             System.out.println();
         }
 
-        // 讀取檔案轉為稀疏矩陣
+        // 9.讀取檔案轉為稀疏矩陣
         System.out.println("------------------分隔線------------------");
 
         try {
