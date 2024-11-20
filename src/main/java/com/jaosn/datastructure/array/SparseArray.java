@@ -58,7 +58,7 @@ public class SparseArray {
         }
 
         // 9.讀取檔案轉為稀疏矩陣
-        System.out.println("------------------分隔線------------------");
+        System.out.println("-----------------讀取檔案-----------------");
 
         try {
             List<String> files = Files.readAllLines(filePath, StandardCharsets.UTF_8);
