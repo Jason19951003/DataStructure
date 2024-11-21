@@ -1,5 +1,7 @@
 package com.jaosn.datastructure.queue;
 
+import java.util.Scanner;
+
 // 一般的陣列實現Queue
 public class ArryaQueue<T> {
     private int maxSize;
@@ -15,7 +17,7 @@ public class ArryaQueue<T> {
     }
 
     public boolean isEmpty() {
-        return front == -1;
+        return rear == front;
     }
 
     public boolean isFull() {
@@ -49,13 +51,50 @@ public class ArryaQueue<T> {
             return null;
         }
         front++;
-        return queue[front];
+        T item = queue[front];
+        return item;
     }
 
     public void printQueue() {
-        for (int i = 0; i < rear; i++) {
+        for (int i = 0; i < queue.length; i++) {
             System.out.print(queue[i] + " ");
         }
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        ArryaQueue<Integer> queue = new ArryaQueue<>(3);
+        boolean flag = true;
+
+        while(flag) {
+            System.out.println("(s)輸出當前的Queue");
+            System.out.println("(a)增加元素至Queue");
+            System.out.println("(d)取出Queue的元素");
+            System.out.println("(e)離開");
+
+            char input = sc.nextLine().charAt(0);
+
+            switch (input) {
+                case 's':
+                    queue.printQueue();
+                    break;
+                case 'a':
+                    System.out.println("請輸入一個數字");
+                    int a = Integer.parseInt(sc.nextLine());
+                    queue.enqueue(a);
+                    break;
+                case 'd':
+                    Integer d = queue.dequeue();
+                    System.out.println("取出的元素是:" + d);
+                    break;
+                case 'e':
+                    flag = false;
+                    break;
+            }
+        }
+
+        System.out.println("結束程式!");
     }
 }
