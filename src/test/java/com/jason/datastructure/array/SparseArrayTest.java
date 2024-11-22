@@ -1,7 +1,8 @@
 package com.jason.datastructure.array;
 
+import org.junit.jupiter.api.Test;
+
 import com.jaosn.datastructure.array.SparseArray;
-import org.junit.Test;
 
 
 public class SparseArrayTest {

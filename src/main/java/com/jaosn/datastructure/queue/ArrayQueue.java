@@ -3,13 +3,13 @@ package com.jaosn.datastructure.queue;
 import java.util.Scanner;
 
 // 一般的陣列實現Queue
-public class ArryaQueue<T> {
+public class ArrayQueue<T> {
     private int maxSize;
     private int front;
     private int rear;
     private T[] queue;
 
-    public ArryaQueue(int maxSize) {
+    public ArrayQueue(int maxSize) {
         this.maxSize = maxSize;
         this.front = -1;
         this.rear = -1;
@@ -65,7 +65,7 @@ public class ArryaQueue<T> {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        ArryaQueue<Integer> queue = new ArryaQueue<>(3);
+        ArrayQueue<Integer> queue = new ArrayQueue<>(3);
         boolean flag = true;
 
         while(flag) {

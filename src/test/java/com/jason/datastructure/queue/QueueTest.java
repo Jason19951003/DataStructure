@@ -1,16 +1,17 @@
 package com.jason.datastructure.queue;
 
-import com.jaosn.datastructure.queue.ArryaQueue;
-import org.junit.Test;
-
 import java.util.Scanner;
+
+import org.junit.jupiter.api.Test;
+
+import com.jaosn.datastructure.queue.ArrayQueue;
 
 public class QueueTest {
 
     @Test
     public void arrayQueueTest() {
         Scanner sc = new Scanner(System.in);
-        ArryaQueue<Integer> queue = new ArryaQueue<>(3);
+        ArrayQueue<Integer> queue = new ArrayQueue<>(3);
         boolean flag = true;
 
         while(flag) {
