@@ -1,12 +1,17 @@
 package com.jaosn.datastructure.linkedlist;
 
-public class DoubleNode extends Node {
+public class DoubleNode {
 
-	private Node pre;
+	int no;
+	int value;
+	DoubleNode next;
+	DoubleNode pre;
 	
 	public DoubleNode(int no, int value) {
-		super(no, value);
-		pre = null;
+		this.no = no;
+		this.value = value;
+		this.next = null;
+		this.pre = null;
 	}
 
 }
