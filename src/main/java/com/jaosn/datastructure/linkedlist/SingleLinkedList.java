@@ -1,5 +1,7 @@
 package com.jaosn.datastructure.linkedlist;
 
+import java.util.Stack;
+
 public class SingleLinkedList {
 
 	private Node head;
@@ -86,6 +88,24 @@ public class SingleLinkedList {
 		head.next = curr;
 	}
 	
+	public SingleLinkedList reverseOutput() {
+		SingleLinkedList linkedList = new SingleLinkedList();
+		
+		Stack<Integer> stack = new Stack<>();
+		Node temp = head.next;
+		while (temp != null) {
+			stack.push(temp.value);
+			temp = temp.next;
+		}
+		
+		while (!stack.isEmpty()) {
+			int val = stack.pop();
+			linkedList.addNode(new Node(val, val));
+		}
+		
+		return linkedList;
+	}
+	
 	@Override
 	public String toString() {
 		String toString = "";
@@ -123,6 +143,8 @@ public class SingleLinkedList {
 		System.out.println(singleLinkedList);
 		
 		singleLinkedList.delete(5);
+		
+		System.out.println(singleLinkedList.reverseOutput());
 	}
 	
 }
