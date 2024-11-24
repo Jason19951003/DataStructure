@@ -13,5 +13,10 @@ public class DoubleNode {
 		this.next = null;
 		this.pre = null;
 	}
+	
+	@Override
+	public String toString() {
+		return "Node [no=" + no + ", value=" + value + "]";
+	}
 
 }
