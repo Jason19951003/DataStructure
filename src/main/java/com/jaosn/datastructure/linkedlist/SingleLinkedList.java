@@ -35,6 +35,57 @@ public class SingleLinkedList {
 		
 	}
 
+	/**
+	 * 查詢LinkedList長度
+	 * @return
+	 */
+	public int length() {
+		Node temp = head;
+		int res = 0;
+		while (temp.next != null) {
+			res++;
+			temp = temp.next;
+		}
+		return res;
+	}
+	
+	/**
+	 * 查詢倒數第index個元素
+	 * @param index
+	 * @return
+	 */
+	public int findReverse(int index) {
+		Node temp = head.next;
+		
+		if (index <= 0) {
+			System.out.println("index 不可小於零");
+			return -1;
+		}
+		
+		for (int i = 0; i < length() - index; i++) {
+			temp = temp.next;
+		}
+		return temp.value;
+	}
+	
+	/**
+	 * 反轉LinkedList
+	 */
+	public void reverse() {
+		Node pre = null;
+		Node curr = head;
+		Node next = head.next;
+			
+		while (curr != null && next != null) {
+			curr = next;
+			next = next.next;
+			curr.next = pre;
+			pre = curr;
+		}
+		
+		head.next = curr;
+	}
+	
 	@Override
 	public String toString() {
 		String toString = "";
@@ -58,6 +109,12 @@ public class SingleLinkedList {
 		singleLinkedList.addNode(node2);
 		singleLinkedList.addNode(node3);
 		singleLinkedList.addNode(node4);
+		
+		System.out.println(singleLinkedList);
+		System.out.println("長度為:" + singleLinkedList.length());
+		System.out.println("倒數第2個元素為:" + singleLinkedList.findReverse(2));
+		System.out.println(singleLinkedList);
+		singleLinkedList.reverse();
 		
 		System.out.println(singleLinkedList);
 		
